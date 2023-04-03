@@ -20,10 +20,12 @@ class Node {
 public class DoublyLinkedList {
    private Node head;
    private Node tail;
+   private int size;
     
    public DoublyLinkedList() {
       head = null;
       tail = null;
+      size = 0;
    }
     
    public void append(Node newNode) {
@@ -36,6 +38,7 @@ public class DoublyLinkedList {
          newNode.previous = tail;
          tail = newNode;
       }
+      size++;
    }
    
    public void prepend(Node newNode) {
@@ -48,6 +51,7 @@ public class DoublyLinkedList {
          head.previous = newNode;
          head = newNode;
       }
+      size++;
    }
    
    public void printList() {
@@ -76,6 +80,7 @@ public class DoublyLinkedList {
          currentNode.next = newNode;
          successor.previous = newNode;
       }
+      size++;
    }
    
    public void remove(Node currentNode) {
@@ -93,5 +98,41 @@ public class DoublyLinkedList {
          
       if (currentNode == tail)
          tail = predecessor;
+      size--;
+   }
+   public int size(){
+
+       return size;
+   }
+   public void PrintRevList(){
+      Node node = tail;
+      while (node != null) {
+         
+         System.out.print(node.data + " ");
+          node = node.previous;
+      }
+      System.out.println();
+   }
+   public int max(){
+      Node node = head.next;
+      int max = head.data;
+      while (node != null) { 
+         if(max < node.data){
+             max = node.data;
+         }
+         node = node.next;
+      }
+      return max;
+   }
+   public int min(){
+      Node node = head.next;
+      int min = head.data;
+      while (node != null) { 
+         if(min > node.data){
+             min = node.data;
+         }
+         node = node.next;
+      }
+      return min;
    }
 }
