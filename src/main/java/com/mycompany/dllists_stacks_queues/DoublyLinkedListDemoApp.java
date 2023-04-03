@@ -35,5 +35,10 @@ public class DoublyLinkedListDemoApp {
       // Output final list
       System.out.print("List after removing nodes: ");
       numList.printList();
+      System.out.println("Size: "+ numList.size());
+      numList.PrintRevList();
+      
+      System.out.println("Max: " + numList.max());
+      System.out.println("Min: " + numList.min());
    }
 }
