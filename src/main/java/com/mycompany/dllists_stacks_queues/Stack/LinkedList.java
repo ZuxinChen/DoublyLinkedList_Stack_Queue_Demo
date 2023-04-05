@@ -8,9 +8,15 @@ package com.mycompany.dllists_stacks_queues.Stack;
 class Node {
    public int data;
    public Node next;
+   public char data2;
+   
 
    public Node(int initialData) {
       data = initialData;
+      next = null;
+   }
+   public Node(char initialData) {
+      data2 = initialData;
       next = null;
    }
 }
@@ -18,10 +24,12 @@ class Node {
 class LinkedList {
    private Node head;
    private Node tail;
-    
+   private int size;
+   
    public LinkedList() {
       head = null;
       tail = null;
+      size = 0;
    }
     
    public void append(Node newNode) {
@@ -33,6 +41,7 @@ class LinkedList {
          tail.next = newNode;
          tail = newNode;
       }
+      size++;
    }
    
    public void prepend(Node newNode) {
@@ -44,12 +53,21 @@ class LinkedList {
          newNode.next = head;
          head = newNode;
       }
+      size++;
    }
    
    public void printList() {
       Node node = head;
       while (node != null) {
          System.out.print(node.data + " ");
+         node = node.next;
+      }
+      System.out.println();
+   }
+   public void printListStr() {
+      Node node = head;
+      while (node != null) {
+         System.out.print(node.data2 + " ");
          node = node.next;
       }
       System.out.println();
@@ -68,6 +86,7 @@ class LinkedList {
          newNode.next = currentNode.next;
          currentNode.next = newNode;
       }
+      size++;
    }
    
    public void removeAfter(Node currentNode) {
@@ -88,6 +107,7 @@ class LinkedList {
             tail = currentNode;
          }
       }
+      size--;
    }
    
    
@@ -95,4 +115,14 @@ class LinkedList {
    public int getHeadData() {
       return head.data;
    }
+   
+   public int size(){
+       return size;
+   }
+   public Node getHead(){
+       return head;
+   }
+
+   
+   
 }

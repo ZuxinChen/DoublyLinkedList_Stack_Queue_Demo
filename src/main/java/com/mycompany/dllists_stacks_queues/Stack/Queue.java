@@ -34,4 +34,17 @@ class Queue {
    public void print() {
       linkedList.printList();
    }
+   
+   
+   public boolean isEmpty(){
+       
+      if(linkedList.getHead() == null){
+           return true;
+       }
+       return false;
+   }
+   
+   public int size(){
+       return linkedList.size();
+   }
 }

@@ -17,7 +17,12 @@ class Stack {
       Node newNode = new Node(newData);
       linkedList.prepend(newNode);
    }
-   
+    public void pushChar(char c) {
+      // Create a new node and prepend
+      Node newNode = new Node(c);
+      linkedList.prepend(newNode);
+   }
+    
    public int pop() {
       // Copy list head's data
       int poppedItem = linkedList.getHeadData();
@@ -31,5 +36,24 @@ class Stack {
    
    public void print() {
       linkedList.printList();
+   }
+   public void printStr() {
+      linkedList.printListStr();
+   }
+   
+   public boolean isEmpty(){
+      /*
+       if(linkedList.size() == 0){
+           return true;
+       }
+    */
+      if(linkedList.getHead() == null){
+           return true;
+       }
+       return false;
+   }
+   
+   public int size(){
+       return linkedList.size();
    }
 }

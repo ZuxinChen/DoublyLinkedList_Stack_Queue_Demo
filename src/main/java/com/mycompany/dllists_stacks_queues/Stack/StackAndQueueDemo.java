@@ -9,12 +9,16 @@ public class StackAndQueueDemo {
    public static void main(String[] args) {
       int[] numbers = { 83, 27, 44, 55, 66, 16, 42, 73, 75 };
       
+      
       // Initialize a new Stack and add numbers
       Stack numStack = new Stack();
       for (int number : numbers) {
           numStack.push(number);
       }
-
+      
+      System.out.println("Is the stack empty: " + numStack.isEmpty());
+      System.out.println("Size: " + numStack.size());
+      
       // Output stack
       System.out.print("Stack after initial pushes:   ");
       numStack.print();
@@ -33,12 +37,17 @@ public class StackAndQueueDemo {
       // Print a blank line before the Queue demo
       System.out.println();
       
+      
+      
+      
       // Initialize a new Queue and add numbers
       Queue numQueue = new Queue();
       for (int number : numbers) {
           numQueue.enqueue(number);
       }
-
+      
+      System.out.println("Is the queue empty: " + numQueue.isEmpty());
+      System.out.println("Size : " + numQueue.size());
       // Output queue
       System.out.print("Queue after initial enqueues: ");
       numQueue.print();
@@ -57,5 +66,16 @@ public class StackAndQueueDemo {
       numQueue.dequeue();
       System.out.print("Queue after second dequeue:   ");
       numQueue.print();
+      
+      String str ="CSC229";
+      
+      Stack stack2 = new Stack();
+      for(char c : str.toCharArray()){
+          stack2.pushChar(c);
+      }
+      
+      stack2.printStr();
+      
+      
    }
 }
